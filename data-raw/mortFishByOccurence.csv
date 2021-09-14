@@ -1,0 +1,78 @@
+Year,Author,Jounral,Species,River ,Run,Exp. Setup,fishSize_mm,N,variable,value,units,cumlitaveFraction,imageJ
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,345,Depth,0.063,m,0.052,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,345,Depth,0.208,m,0.258,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,345,Depth,0.368,m,0.493,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,345,Depth,0.516,m,0.676,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,345,Depth,0.665,m,0.788,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,345,Depth,0.816,m,0.867,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,345,Depth,0.97,m,0.927,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,345,Depth,1.121,m,0.96,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,345,Depth,1.267,m,0.977,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,345,Depth,1.424,m,0.981,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,251,Depth,0.06,m,0.01,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,251,Depth,0.209,m,0.079,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,251,Depth,0.364,m,0.241,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,251,Depth,0.513,m,0.405,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,251,Depth,0.671,m,0.548,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,251,Depth,0.817,m,0.666,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,251,Depth,0.969,m,0.768,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,251,Depth,1.121,m,0.838,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,251,Depth,1.273,m,0.876,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,251,Depth,1.428,m,0.919,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,251,Depth,1.574,m,0.936,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,251,Depth,1.726,m,0.95,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,251,Depth,1.875,m,0.965,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,251,Depth,2.03,m,0.971,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,345,Velocity,0.063,m/s,0.663,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,345,Velocity,0.184,m/s,0.9,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,345,Velocity,0.304,m/s,0.969,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,345,Velocity,0.425,m/s,0.988,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,345,Velocity,0.552,m/s,0.99,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,251,Velocity,0.063,m/s,0.375,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,251,Velocity,0.185,m/s,0.629,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,251,Velocity,0.306,m/s,0.825,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,251,Velocity,0.424,m/s,0.915,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,251,Velocity,0.546,m/s,0.956,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,251,Velocity,0.664,m/s,0.973,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,251,Velocity,0.79,m/s,0.987,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,251,Velocity,0.915,m/s,0.996,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,267,Dis to Cover,0.071,m,0.186,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,267,Dis to Cover,0.229,m,0.342,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,267,Dis to Cover,0.378,m,0.512,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,267,Dis to Cover,0.532,m,0.643,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,267,Dis to Cover,0.682,m,0.702,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,267,Dis to Cover,0.836,m,0.742,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,267,Dis to Cover,0.989,m,0.786,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,267,Dis to Cover,1.151,m,0.833,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,267,Dis to Cover,1.297,m,0.858,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,267,Dis to Cover,1.443,m,0.873,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,267,Dis to Cover,1.604,m,0.886,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,267,Dis to Cover,1.754,m,0.899,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,267,Dis to Cover,1.904,m,0.901,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,267,Dis to Cover,2.062,m,0.922,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,267,Dis to Cover,2.215,m,0.924,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,267,Dis to Cover,2.365,m,0.93,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,267,Dis to Cover,2.519,m,0.932,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,267,Dis to Cover,2.677,m,0.934,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,267,Dis to Cover,2.826,m,0.939,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,< 50,267,Dis to Cover,2.984,m,0.941,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,126,Dis to Cover,0.075,m,0.168,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,126,Dis to Cover,0.235,m,0.337,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,126,Dis to Cover,0.381,m,0.454,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,126,Dis to Cover,0.536,m,0.528,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,126,Dis to Cover,0.692,m,0.653,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,126,Dis to Cover,0.843,m,0.724,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,126,Dis to Cover,0.993,m,0.781,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,126,Dis to Cover,1.149,m,0.855,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,126,Dis to Cover,1.304,m,0.895,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,126,Dis to Cover,1.445,m,0.903,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,126,Dis to Cover,1.605,m,0.916,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,126,Dis to Cover,1.756,m,0.921,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,126,Dis to Cover,1.916,m,0.918,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,126,Dis to Cover,2.062,m,0.949,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,126,Dis to Cover,2.217,m,0.957,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,126,Dis to Cover,2.373,m,0.962,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,126,Dis to Cover,2.523,m,0.967,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,126,Dis to Cover,2.679,m,0.964,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,126,Dis to Cover,2.82,m,0.967,Y
+2010,Goodman,USFWS,Chinook,Trinity,?,Field,50-200,126,Dis to Cover,2.98,m,0.967,Y

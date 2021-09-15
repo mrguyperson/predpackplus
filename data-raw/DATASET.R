@@ -28,11 +28,11 @@ angle_calc <- function(length){
 pred_len_data <- function(){
   readr::read_csv('data-raw/lmb_stb_combined.csv') %>%
     dplyr::mutate(max_prey_length = prey_conv(0.443, 0.774, length_mm),
-           safety = cumulative_proportion - proportion_of_total,
-           angle = angle_calc(length_mm),
-           reaction_distance = max_prey_length / (2 * tan(angle / 2)),
-           max_prey_length = max_prey_length / 10,
-           variable = "length") %>%
+                  safety = cumulative_proportion - proportion_of_total,
+                  angle = angle_calc(length_mm),
+                  reaction_distance = max_prey_length / (2 * tan(angle / 2)),
+                  max_prey_length = max_prey_length / 10,
+                  variable = "length") %>%
     dplyr::rename(magnitude = max_prey_length, unitless_value = safety) %>%
     dplyr::select(variable, magnitude, unitless_value)
 }
@@ -46,9 +46,9 @@ pred_len_data <- function(){
 pred_depth_data  <- function(maxSurvival=0.9){
   readr::read_csv('data-raw/mortFishByOccurence.csv') %>%
     dplyr::filter(fishSize_mm =="< 50",
-           variable == "Depth") %>%
+                  variable == "Depth") %>%
     dplyr:: mutate(fraction = cumlitaveFraction - lag(cumlitaveFraction),
-           unitless_value = fraction/max(fraction, na.rm = T)*maxSurvival) %>%
+                   unitless_value = fraction/max(fraction, na.rm = T)*maxSurvival) %>%
     dplyr::rename(magnitude = value) %>%
     dplyr::select(magnitude, variable, unitless_value)
 }
@@ -72,9 +72,12 @@ pred_cover_data <- function(maxSurvival=0.9){
 
 # runs all the data functions and combines them into a single dataframe
 full_raw_data  <- function(){
-  df <- dplyr::bind_rows(pred_t_data(), pred_len_data(), pred_depth_data(), pred_cover_data())
+  df <- dplyr::bind_rows(pred_t_data(),
+                         pred_len_data(),
+                         pred_depth_data(),
+                         pred_cover_data())
   df %>% dplyr::mutate(variable = tolower(variable),
-                unitless_value = as.numeric(unitless_value))
+                       unitless_value = as.numeric(unitless_value))
 }
 
 table_of_logistic_models <- function(df){
@@ -84,8 +87,8 @@ table_of_logistic_models <- function(df){
 
     # add a new column of fitted glm models for each variable
     dplyr::mutate(fit = purrr::map(data, ~ glm(unitless_value ~ magnitude,
-                                        family = quasibinomial(logit),
-                                        data = .)))
+                                               family = quasibinomial(logit),
+                                               data = .)))
 }
 
 survival_prediction_table <- function(df, model_table){
@@ -97,7 +100,10 @@ survival_prediction_table <- function(df, model_table){
     dplyr::inner_join(model_table, by = 'variable') %>%
 
     # preditct survival values based on the x values and glms
-    dplyr::mutate(survival = purrr::map2(fit, magnitude, predict.glm, type='response')) %>%
+    dplyr::mutate(survival = purrr::map2(fit,
+                                         magnitude,
+                                         predict.glm,
+                                         type='response')) %>%
 
     # unnest the x values and survival values
     tidyr::unnest(c(magnitude, survival)) %>%
@@ -150,7 +156,10 @@ survival_prediction_table <- function(df, model_table){
     dplyr::inner_join(model_table, by = 'variable') %>%
 
     # preditct survival values based on the x values and glms
-    dplyr::mutate(survival = purrr::map2(fit, magnitude, predict.glm, type='response')) %>%
+    dplyr::mutate(survival = purrr::map2(fit,
+                                         magnitude,
+                                         predict.glm,
+                                         type='response')) %>%
 
     # unnest the x values and survival values
     tidyr::unnest(c(magnitude, survival)) %>%

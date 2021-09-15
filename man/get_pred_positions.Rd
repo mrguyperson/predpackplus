@@ -2,7 +2,7 @@
 % Please edit documentation in R/generate_preds_and_encs.R
 \name{get_pred_positions}
 \alias{get_pred_positions}
-\title{Predator positions across all transects}
+\title{Predator Positions Across All Transects}
 \source{
 defaults based on Michel et al. 2018. "Non-native fish predator density and molecular-based diet estimates suggest differing effects of predator species on Juvenile Salmon in the San Joaquin River, California"
 }
@@ -17,7 +17,7 @@ get_pred_positions(
 \arguments{
 \item{transect_length}{length of each transect in meters; default is 1000}
 
-\item{n_transects}{number of transects in the model; default is 20}
+\item{n_transects}{integer of transects in the model; default is 20}
 
 \item{lit_zone_size}{the size of the littoral zone (i.e., nearshore area) in meters; default is 5}
 

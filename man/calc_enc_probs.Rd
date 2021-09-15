@@ -2,7 +2,7 @@
 % Please edit documentation in R/generate_preds_and_encs.R
 \name{calc_enc_probs}
 \alias{calc_enc_probs}
-\title{Probability that prey encounters a predator in each cell}
+\title{Encounter Probability}
 \usage{
 calc_enc_probs(df, grid_size = 15, reaction_dis = 0.5)
 }
@@ -17,6 +17,7 @@ calc_enc_probs(df, grid_size = 15, reaction_dis = 0.5)
 a dataframe of encounter probabilities per grid cell for the entire reach
 }
 \description{
+Probability that prey encounters a predator in each cell
 based on the idea that each predator will engage prey within a certain radius
 total area occupied by predators divided by cell area is the encounter probability
 }

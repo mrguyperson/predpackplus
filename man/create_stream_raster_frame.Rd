@@ -2,7 +2,7 @@
 % Please edit documentation in R/generate_preds_and_encs.R
 \name{create_stream_raster_frame}
 \alias{create_stream_raster_frame}
-\title{Creates and overlays a raster onto the predator positions}
+\title{Environmental Raster}
 \usage{
 create_stream_raster_frame(
   df,
@@ -21,12 +21,13 @@ create_stream_raster_frame(
 
 \item{grid_size}{length of side of raster grid in meters; default is 15}
 
-\item{n_transects}{number of transects in the model; default is 20}
+\item{n_transects}{integer of transects in the model; default is 20}
 }
 \value{
 a dataframe of raster coordinates
 }
 \description{
+Creates and overlays a raster onto the predator positions
 raster size mimics the cells in netlogo
 returns a data.frame with coordinates for the cells and counts of fish in each cell
 }

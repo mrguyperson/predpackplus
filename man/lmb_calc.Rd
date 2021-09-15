@@ -2,7 +2,7 @@
 % Please edit documentation in R/generate_preds_and_encs.R
 \name{lmb_calc}
 \alias{lmb_calc}
-\title{Numbers of largemouth bass in a reach}
+\title{Numbers of Largemouth Bass in a Reach}
 \source{
 defaults based on Michel et al. 2018. "Non-native fish predator density and molecular-based diet estimates suggest differing effects of predator species on Juvenile Salmon in the San Joaquin River, California"
 }
@@ -10,7 +10,7 @@ defaults based on Michel et al. 2018. "Non-native fish predator density and mole
 lmb_calc(n_transects, mean = 333, sd = 195)
 }
 \arguments{
-\item{n_transects}{number of transects in the model}
+\item{n_transects}{integer value of transects in the model}
 
 \item{mean}{mean number of fish per transect; default is 333}
 

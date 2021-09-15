@@ -2,7 +2,7 @@
 % Please edit documentation in R/generate_preds_and_encs.R
 \name{striper_calc}
 \alias{striper_calc}
-\title{Numbers of striped bass in a reach}
+\title{Numbers of Striped Bass in a Reach}
 \source{
 defaults based on Michel et al. 2018. "Non-native fish predator density and molecular-based diet estimates suggest differing effects of predator species on Juvenile Salmon in the San Joaquin River, California"
 }
@@ -17,7 +17,7 @@ striper_calc(
 )
 }
 \arguments{
-\item{n_transects}{number of transects in the model}
+\item{n_transects}{integer of transects in the model}
 
 \item{agg_ratio}{the ratio of large aggregations to low numbers of fish in a reach; default is 1/3}
 

@@ -1,8 +1,8 @@
-#' Numbers of largemouth bass in a reach
+#' Numbers of Largemouth Bass in a Reach
 #' 
 #' Calculate the numbers of largemouth bass in a reach based on field data
 #'
-#' @param n_transects number of transects in the model 
+#' @param n_transects integer value of transects in the model 
 #' @param mean mean number of fish per transect; default is 333
 #' @param sd std dev of number of fish per transect; default is 195
 #'
@@ -20,11 +20,11 @@ lmb_calc <- function(n_transects,
   return(lmb)
 }
 
-#' Numbers of striped bass in a reach
+#' Numbers of Striped Bass in a Reach
 #' 
 #' Calculate the numbers of striped bass in a reach based on field data
 #'
-#' @param n_transects number of transects in the model
+#' @param n_transects integer of transects in the model
 #' @param agg_ratio the ratio of large aggregations to low numbers of fish in a reach; default is 1/3 
 #' @param mean_low mean number of fish per transect when no aggregation is present; default is 60
 #' @param sd_low std dev of number of fish per transect when no aggregation is present; default is 43
@@ -54,12 +54,12 @@ striper_calc <- function(n_transects,
   
 }
 
-#' Predator positions across all transects
+#' Predator Positions Across All Transects
 #' 
 #' Calculates the position of all predators in terms of distance from shore and distance downstream for all transects
 #'
 #' @param transect_length length of each transect in meters; default is 1000
-#' @param n_transects number of transects in the model; default is 20
+#' @param n_transects integer of transects in the model; default is 20
 #' @param lit_zone_size the size of the littoral zone (i.e., nearshore area) in meters; default is 5
 #' @param channel_width width of the channel in meters; default is 100
 #'
@@ -115,8 +115,9 @@ get_pred_positions <- function(transect_length = 1000,
   
 }
 
-#' Creates and overlays a raster onto the predator positions
+#' Environmental Raster
 #' 
+#' Creates and overlays a raster onto the predator positions
 #' raster size mimics the cells in netlogo
 #' returns a data.frame with coordinates for the cells and counts of fish in each cell
 #' 
@@ -124,7 +125,7 @@ get_pred_positions <- function(transect_length = 1000,
 #' @param transect_length length of each transect in meters; default is 1000
 #' @param channel_width width of the channel in meters; default is 100
 #' @param grid_size length of side of raster grid in meters; default is 15
-#' @param n_transects number of transects in the model; default is 20
+#' @param n_transects integer of transects in the model; default is 20
 #'
 #' @return a dataframe of raster coordinates
 #' @export
@@ -149,8 +150,9 @@ create_stream_raster_frame <- function(df,
   return(d)
 }
 
-#' Probability that prey encounters a predator in each cell
+#' Encounter Probability
 #' 
+#' Probability that prey encounters a predator in each cell
 #' based on the idea that each predator will engage prey within a certain radius
 #' total area occupied by predators divided by cell area is the encounter probability
 #'
@@ -175,9 +177,9 @@ calc_enc_probs <- function(df,
 }
 
 
-#' Positions of all predators in the stream
+#' Visualization of Predator Positions
 #'
-#' graphs all predator positions
+#' graphs all predator positions in the 2D stream
 #'
 #' @param df dataframe of predator positions; use output of get_pred_positions function
 #'
@@ -195,7 +197,7 @@ graph_pred_positions <- function(df){
 }
 
 
-#' Heatmap of encounter probabilities 
+#' Heatmap of Encounter Probabilities 
 #' 
 #' Graphs a heatmap of encounter probabilities 
 #'

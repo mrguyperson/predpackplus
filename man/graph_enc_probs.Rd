@@ -2,7 +2,7 @@
 % Please edit documentation in R/generate_preds_and_encs.R
 \name{graph_enc_probs}
 \alias{graph_enc_probs}
-\title{Heatmap of encounter probabilities}
+\title{Heatmap of Encounter Probabilities}
 \usage{
 graph_enc_probs(df)
 }

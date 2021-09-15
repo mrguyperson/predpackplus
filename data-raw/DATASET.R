@@ -1,4 +1,6 @@
-## code to prepare `DATASET` dataset goes here
+## code to prepare 'survival_modifiers' dataset goes here
+
+#### Data on predation prevention from temperature
 pred_t_data  <- function(){
   readr::read_csv('data-raw/mortAqByPredMet.csv') %>%
     dplyr::group_by(author, year, journal, species) %>%
@@ -47,7 +49,7 @@ pred_depth_data  <- function(maxSurvival=0.9){
   readr::read_csv('data-raw/mortFishByOccurence.csv') %>%
     dplyr::filter(fishSize_mm =="< 50",
                   variable == "Depth") %>%
-    dplyr:: mutate(fraction = cumlitaveFraction - lag(cumlitaveFraction),
+    dplyr::mutate(fraction = cumlitaveFraction - dplyr::lag(cumlitaveFraction),
                    unitless_value = fraction/max(fraction, na.rm = T)*maxSurvival) %>%
     dplyr::rename(magnitude = value) %>%
     dplyr::select(magnitude, variable, unitless_value)
@@ -62,7 +64,7 @@ pred_cover_data <- function(maxSurvival=0.9){
   readr::read_csv('data-raw/mortFishByOccurence.csv') %>%
     dplyr::filter(fishSize_mm =="< 50",
            variable == "Dis to Cover") %>%
-    dplyr::mutate(fraction = cumlitaveFraction - lag(cumlitaveFraction),
+    dplyr::mutate(fraction = cumlitaveFraction - dplyr::lag(cumlitaveFraction),
            fraction = ifelse(is.na(fraction), cumlitaveFraction, fraction),
            unitless_value = fraction/max(fraction, na.rm = T)*maxSurvival) %>%
     dplyr::rename(magnitude = value) %>%
@@ -182,6 +184,6 @@ predation_survival_driver_func <- function(){
   survival_table <- survival_prediction_table(x_values, model_table)
 }
 
-DATASET <- predation_survival_driver_func()
+survival_modifiers <- predation_survival_driver_func()
 
-usethis::use_data(DATASET, internal = TRUE)
+usethis::use_data(survival_modifiers, internal = TRUE, overwrite = TRUE)

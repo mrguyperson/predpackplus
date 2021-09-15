@@ -2,7 +2,7 @@
 % Please edit documentation in R/generate_preds_and_encs.R
 \name{graph_pred_positions}
 \alias{graph_pred_positions}
-\title{Positions of all predators in the stream}
+\title{Visualization of Predator Positions}
 \usage{
 graph_pred_positions(df)
 }
@@ -13,7 +13,7 @@ graph_pred_positions(df)
 a graph of all predator positions
 }
 \description{
-graphs all predator positions
+graphs all predator positions in the 2D stream
 }
 \examples{
 pred_pos <- get_pred_positions(n_transects = 5)

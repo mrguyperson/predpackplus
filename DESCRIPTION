@@ -19,6 +19,7 @@ Imports:
     dplyr,
     fs,
     furrr,
+    future,
     ggplot2,
     magrittr,
     purrr,

@@ -35,7 +35,7 @@ prey_fish_lengths <- function(number_of_fish, mean_length = 14, sd_length = (1.7
 
 fish_with_length_survival_boost <- function(fish_frame){
   fish_frame %>%
-    dplyr::mutate(survival_boost = furrr::future_map(length, calculate_risk_modifier, selected_variable = 'length'))
+    dplyr::mutate(survival_boost = furrr::future_map(length, calculate_risk_modifier, selected_variable = 'length', .progress=TRUE))
 }
 
 #' Number of Cells Traversed
@@ -87,7 +87,8 @@ frame_of_all_cells_traversed_per_fish <- function(number_of_fish, enc_prob_vecto
                                      encounter_frame,
                                      enc_prob_vector = enc_prob_vector,
                                      path_length = path_length,
-                                     .options = furrr::furrr_options(seed=TRUE)))
+                                     .options = furrr::furrr_options(seed=TRUE),
+                                     .progress=TRUE))
 }
 
 
@@ -123,8 +124,8 @@ simulate_encounters <- function(combined_frame){
     dplyr::mutate(survival_boost = as.numeric(.data$survival_boost),
                   enc_prob = as.numeric(.data$enc_prob),
                   modified_enc = calculate_encounter_prob_based_on_length(.data$survival_boost, .data$enc_prob),
-                  encounter = furrr::future_map(.data$modified_enc, check_if_encounter_occurs, .options = furrr::furrr_options(seed=TRUE)),
-                  alive = as.numeric(furrr::future_map(.data$encounter, encounter_simulator, .options = furrr::furrr_options(seed=TRUE))))
+                  encounter = furrr::future_map(.data$modified_enc, check_if_encounter_occurs, .options = furrr::furrr_options(seed=TRUE),.progress=TRUE),
+                  alive = as.numeric(furrr::future_map(.data$encounter, encounter_simulator, .options = furrr::furrr_options(seed=TRUE),.progress=TRUE)))
 }
 
 #' Final Status of Prey Fish
@@ -141,7 +142,7 @@ simulate_encounters <- function(combined_frame){
 
 calculate_final_status <- function(fish_frame, path_length){
   sum_encounter_outcomes(fish_frame) %>%
-    dplyr::mutate(final_status = furrr::future_map(.data$total_alive_outcomes, evaluate_final_status_of_fish, path_length)) %>%
+    dplyr::mutate(final_status = furrr::future_map(.data$total_alive_outcomes, evaluate_final_status_of_fish, path_length, .progress=TRUE)) %>%
     tidyr::unnest(.data$final_status)
 }
 
@@ -191,31 +192,29 @@ calculate_proportion_of_survivors <- function(number_of_survivors, number_of_fis
 #'
 #' The return value is the proportion of survivors.
 #'
-#'
+#' @param n_transects integer of transects in the model
+#' @param mean_length mean length of fish in cm
 #' @param number_of_fish number (pos integer) of prey fish desired
-#' @param mean_length mean length of fish in cm; default is 14
 #' @param sd_length std dev of fish length in cm; default is 1.7 and scales with mean
 #' @param transect_length length of each transect in meters; default is 1000
 #' @param channel_width width of the channel in meters; default is 100
 #' @param lit_zone_size the size of the littoral zone (i.e., nearshore area) in meters; default is 5
-#' @param grid_size length of side of raster grid in meters; default is 15
-#' @param n_transects integer of transects in the model; default is 20
 #' @param grid_size length of side of raster grid in meters; default is 15
 #' @param reaction_dis maximum distance (in m) away from a predator that can trigger an encounter; default is 0.50
 #'
 #' @return the proportion of surviving fish
 #' @export
 #'
-#' @examples survival_simulation_driver (number_of_fish = 20)
+#' @examples survival_simulation_driver (number_of_fish = 20, mean_length = 10, n_transects = 5)
 #' @source defaults based on Steel et al. 2020. "Applying the mean free-path length model to juvenile Chinook salmon migrating in the Sacramento River, California"
 #' and Michel et al. 2018. "Non-native fish predator density and molecular-based diet estimates suggest differing effects of predator species on Juvenile Salmon in the San Joaquin River, California"
 #' @note this function can be parallelized; e.g., by setting plan(multisession)
 
 survival_simulation_driver <- function(number_of_fish,
-                                       mean_length = 14,
+                                       mean_length,
+                                       n_transects,
                                        sd_length = (1.7/14) * mean_length,
                                        transect_length = 1000,
-                                       n_transects = 20,
                                        lit_zone_size = 5,
                                        channel_width = 100,
                                        grid_size = 15,

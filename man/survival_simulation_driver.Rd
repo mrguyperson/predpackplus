@@ -10,10 +10,10 @@ and Michel et al. 2018. "Non-native fish predator density and molecular-based di
 \usage{
 survival_simulation_driver(
   number_of_fish,
-  mean_length = 14,
+  mean_length,
+  n_transects,
   sd_length = (1.7/14) * mean_length,
   transect_length = 1000,
-  n_transects = 20,
   lit_zone_size = 5,
   channel_width = 100,
   grid_size = 15,
@@ -23,13 +23,13 @@ survival_simulation_driver(
 \arguments{
 \item{number_of_fish}{number (pos integer) of prey fish desired}
 
-\item{mean_length}{mean length of fish in cm; default is 14}
+\item{mean_length}{mean length of fish in cm}
+
+\item{n_transects}{integer of transects in the model}
 
 \item{sd_length}{std dev of fish length in cm; default is 1.7 and scales with mean}
 
 \item{transect_length}{length of each transect in meters; default is 1000}
-
-\item{n_transects}{integer of transects in the model; default is 20}
 
 \item{lit_zone_size}{the size of the littoral zone (i.e., nearshore area) in meters; default is 5}
 
@@ -59,5 +59,5 @@ The return value is the proportion of survivors.
 this function can be parallelized; e.g., by setting plan(multisession)
 }
 \examples{
-survival_simulation_driver (number_of_fish = 20)
+survival_simulation_driver (number_of_fish = 20, mean_length = 10, n_transects = 5)
 }

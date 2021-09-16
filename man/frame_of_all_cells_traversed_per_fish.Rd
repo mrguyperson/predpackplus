@@ -7,7 +7,7 @@
 frame_of_all_cells_traversed_per_fish(
   number_of_fish,
   enc_prob_vector,
-  num_trans_traversed
+  path_length
 )
 }
 \arguments{
@@ -15,13 +15,13 @@ frame_of_all_cells_traversed_per_fish(
 
 \item{enc_prob_vector}{vector of all encounter probabilities calculated for each cell; see calc_enc_probs()}
 
-\item{num_trans_traversed}{number of cells traversed; determined by calculate_num_cells_traversed()}
+\item{path_length}{number of cells traversed; determined by calculate_path_length()}
 }
 \value{
 a dataframe of encounter probabilities for each fish
 }
 \description{
-Creates a dataframe of "paths" for each fish to "travel". A number of cells equal to num_trans_traversed
+Creates a dataframe of "paths" for each fish to "travel". A number of cells equal to path_length
 is randomly selected for each fish and becomes that fish's travel path.
 }
 \note{
@@ -32,10 +32,10 @@ pred_pos <- get_pred_positions()
 raster <- create_stream_raster_frame(pred_pos)
 enc_prob_frame <- calc_enc_probs(raster)
 enc_prob_vector <- enc_prob_frame \%>\% dplyr::pull(enc_prob)
-num_trans = calculate_num_cells_traversed()
+path_length = calculate_path_length()
 frame_of_all_cells_traversed_per_fish(number_of_fish = 10,
                                       enc_prob_vector = enc_prob_vector,
-                                      num_trans_traversed = num_trans)
+                                      path_length = path_length)
 
 
 }

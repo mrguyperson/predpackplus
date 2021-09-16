@@ -9,17 +9,17 @@ defaults based on Steel et al. 2020. "Applying the mean free-path length model t
 \usage{
 prey_fish_lengths(
   number_of_fish,
-  mean = 14,
-  sd = (1.7/14) * mean,
+  mean_length = 14,
+  sd_length = (1.7/14) * mean_length,
   precision = 1
 )
 }
 \arguments{
 \item{number_of_fish}{number (pos integer) of prey fish desired}
 
-\item{mean}{mean length of fish in cm; default is 14}
+\item{mean_length}{mean length of fish in cm; default is 14}
 
-\item{sd}{std dev of fish length in cm; default is 1.7 and scales with mean}
+\item{sd_length}{std dev of fish length in cm; default is 1.7 and scales with mean}
 
 \item{precision}{integer for level of precision for length (e.g., to the 10's or 100's place)}
 }

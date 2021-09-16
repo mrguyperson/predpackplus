@@ -4,12 +4,12 @@
 \alias{calculate_final_status}
 \title{Final Status of Prey Fish}
 \usage{
-calculate_final_status(fish_frame, num_trans_traversed)
+calculate_final_status(fish_frame, path_length)
 }
 \arguments{
 \item{fish_frame}{dataframe with prey fish, lengths, survival modifiers, and simulation results; see simulate_encounters()}
 
-\item{num_trans_traversed}{number of cells traversed; determined by calculate_num_cells_traversed()}
+\item{path_length}{number of cells traversed; determined by calculate_path_length()}
 }
 \value{
 dataframe with a "final_status" column to indicate overall survival for each fish

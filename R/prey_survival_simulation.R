@@ -119,7 +119,7 @@ combine_encounter_frame_and_fish_frame <- function(fish_frame, enc_frame){
 #' @note this function can be parallelized; e.g., by setting plan(multisession)
 
 simulate_encounters <- function(combined_frame){
-  combined_frame%>%
+  combined_frame %>%
     dplyr::mutate(survival_boost = as.numeric(.data$survival_boost),
                   enc_prob = as.numeric(.data$enc_prob),
                   modified_enc = calculate_encounter_prob_based_on_length(.data$survival_boost, .data$enc_prob),
